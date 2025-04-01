@@ -1,0 +1,234 @@
+@use 'sass:math';
+
+$yellow: rgb(255, 217, 0);
+$blue: rgb(70, 119, 223);
+$pink: rgb(209, 102, 142);
+
+@function px-to-rem($px, $base: 16) {
+    @return math.div($px, $base) * 1rem;
+}
+
+// 
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: $blue;
+    letter-spacing: .05rem;
+    background-color: whitesmoke;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    color: white;
+    padding:.5rem 1rem;
+    letter-spacing: inherit;
+}
+
+
+input {
+    cursor: pointer;
+}
+
+
+strong {
+    color: darken($color: $blue, $amount: 12);
+}
+
+a {
+    text-decoration: none;
+    color: $pink;
+
+    &:hover {
+        color: $yellow;
+    }
+}
+
+main {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 100%;
+    max-width: px-to-rem(1500, );
+    margin-inline: auto;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 4rem;
+}
+
+h1 span {
+    color: $yellow;
+}
+
+// todo list
+.create-task-form {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.create-task-form input {
+    padding: .5rem;
+    border: .1rem solid $pink;
+    font-family: inherit;
+    color: $pink;
+    box-shadow: .2rem .3rem $blue;
+}
+
+.create-task-form input:focus-visible {
+    outline-color: $pink;
+}
+
+.list {
+    margin-block: 4rem;
+    border: .1rem solid; 
+    max-width: 40rem;
+    padding: .5rem;
+    box-shadow: .4rem .3rem $yellow;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: $pink;
+}
+
+input[type="checkbox"] {
+    accent-color: $pink;
+}
+
+.todo-item {
+    max-width: 40rem;
+    border-bottom: 1px solid rgba(70, 119, 223, 0.17); 
+    cursor: pointer;
+}  
+
+.todo-item label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 1rem;
+    cursor: pointer;
+    text-wrap: nowrap;
+    gap: .5rem;
+}
+
+.todo-item .group-1 {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    overflow: auto;  
+    max-width: 30rem;
+}
+
+.todo-item .group-2 {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    overflow: auto;  
+}
+
+.editing-input {
+    border: none;
+    border-bottom: 1px dotted;
+}
+
+.editing-input:focus-visible {
+    outline: none;
+}
+
+.empty-list {
+    text-align: center;
+    font-size: .9rem;
+    color: grey;
+}
+
+// blabberings section
+.blabberings h2 {
+    color: $pink;
+    font-size: 2rem;
+}
+
+
+.blabberings h2 span:first-of-type {
+    color: $blue;
+}
+
+.blabberings h2 span {
+    color: $yellow;
+}
+
+.blabberings {
+    text-align: center;
+    margin-block-start: 5rem;
+    max-width: 35rem;
+    margin-inline: auto;
+}
+
+.note-taking-ad {
+    margin-block-start: 5rem;
+}
+
+.credits {
+    font-size: .8rem;
+}
+
+// buttons
+.create-task-form button {
+    background-color: $yellow;
+    color: $blue;
+    box-shadow: .2rem .3rem; 
+    transition: .4s;
+}
+
+.create-task-form button:hover {
+    box-shadow: .1rem .1rem;
+    background-color: darken($color: $yellow, $amount: 3);
+}
+
+.delete-btn {
+    background-image: url(/assets/delete.svg);
+}
+
+.edit-btn {
+    background-image: url(/assets/edit.svg);
+}
+
+.delete-btn,
+.edit-btn {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1.25rem; 
+    width: 2rem;
+    aspect-ratio: 1;
+
+    &:hover {
+       background-size: 1.5rem; 
+    }
+} 
+
+.save-btn {
+    background-color: $yellow;
+    padding: .3rem .5rem;
+    color: $blue;
+
+    &:hover {
+        background-color: darken($color: $yellow, $amount: 3);
+    }
+}
+
+
+// media queries
+@media screen and (min-width: 1000px) {
+    main {
+        grid-template-columns: 50% 46%;
+        gap: 4%;
+        padding: 2rem;
+        margin-right: 1rem;
+    }
+}
