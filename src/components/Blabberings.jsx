@@ -9,8 +9,8 @@ export default function Blabberings() {
           <p>This project uses <a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API" target="_blank">IndexedDB</a> to store your data,
              which means you can close or refresh the page, and your tasks will remain saved. 
             However, <strong>if you clear site data or uninstall the browser, your tasks will be lost.</strong></p>
-            
-          <p className="note-taking-ad">interested in a note-taking version of this website? <a href="#">check here!</a></p>
+
+          <p className="note-taking-ad">interested in a note-taking version of this website? <a href="https://notes-web-app-project.netlify.app/" target="_blank">check here!</a></p>
 
           <p className="credits">icons by <a href="https://www.svgrepo.com/" target="_blank">SVGrepo.</a> coded by <a href="https://github.com/tortaruga" target="_blank">tortaruga</a></p>
         </div> 
